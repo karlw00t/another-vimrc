@@ -53,7 +53,10 @@ set errorformat=%m\ in\ %f\ on\ line\ %l
 set nocompatible
 source $VIMRUNTIME/vimrc_example.vim
 source $VIMRUNTIME/mswin.vim
-behave mswin
+if has("win32")
+    behave mswin
+endif
+
 
 
 let mapleader = ","
