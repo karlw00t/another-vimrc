@@ -23,7 +23,9 @@ inoremap <right> <nop>
 nnoremap j gj
 nnoremap k gk
 inoremap jj <ESC>
-set relativenumber
+if has("relativenumber")
+	set relativenumber
+endif
 colorscheme darkblue
 
 nnoremap ; :
