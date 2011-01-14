@@ -69,3 +69,19 @@ nnoremap <leader>l $a;<Esc>
 inoremap <leader>pr require_once('PHPUnit/root_path.inc.php');
 
 call pathogen#runtime_append_all_bundles() 
+
+function RunTest(arg)
+	echo 'Running unit test ...' 
+	let file = substitute(expand("%:t"), "^.", "\\U\\0", "")
+	let file =  expand("%:p:h") . "/test/test" . file
+	if a:arg == '-'
+		let arg = ''
+	endif
+	if filereadable(file)
+		let sp = conque_term#open('phpunit ' .a:arg. ' ' . file , ['split', 'resize 10'])
+	else
+		let sp = conque_term#open('phpunit ' .a:arg. ' ' . expand('%')  , ['split', 'resize 10'])
+	endif
+endfunction
+
+command! -nargs=+ -complete=command Phpunit call RunTest(<q-args>)
