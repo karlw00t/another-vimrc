@@ -1,13 +1,14 @@
 " add line numbers to the file
 set number
 
+" Sane programming
 set cindent
 set smartindent
 set autoindent
-set tabstop=2
-set shiftwidth=2
-set cinkeys=0{0}:0#!!^F
+set tabstop=4
+set shiftwidth=4
 
+" makes searching more greedy
 set ignorecase
 set smartcase 
 
@@ -23,6 +24,8 @@ inoremap <up> <nop>
 inoremap <down> <nop>
 inoremap <left> <nop>
 inoremap <right> <nop>
+
+" Moving up and down on wrapped lines acts normal
 nnoremap j gj
 nnoremap k gk
 
@@ -40,23 +43,6 @@ colorscheme darkblue
 "no shift to enter into command mode
 nnoremap ; :
 
-inoremap {      {}<Left>
-inoremap {<CR>  {<CR>}<Esc>O
-inoremap {{     {
-inoremap {}     {}
-inoremap (;      ();<Left><Left>
-inoremap (<CR> 	(<CR>)<Esc>O
-inoremap (;<CR> 	(<CR>);<Esc>O
-inoremap ((     (
-inoremap ()     ()
-
-" turn on backup
-set backup
-
-" Set where to store backups
-
-" Set where to store swap files
-
 " Highlight when searching
 highlight Search term=reverse ctermbg=2 ctermfg=4 guibg=Gray
 
@@ -68,7 +54,7 @@ au BufRead,BufNewFile *.py,*.pyw match BadWhitespace /^\t\+/
 " Make trailing whitespace be flagged as bad.
 au BufRead,BufNewFile *.py,*.pyw,*.c,*.h match BadWhitespace /\s\+$/
 
-" Crap, please ignore
+" Crap, please ignore the rest
 set makeprg=php\ -l\ %
 set errorformat=%m\ in\ %f\ on\ line\ %l
 
