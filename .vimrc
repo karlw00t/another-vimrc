@@ -72,7 +72,9 @@ nnoremap <leader>l $a;<Esc>
 
 inoremap <leader>pr require_once('PHPUnit/root_path.inc.php');
 
+" Pathogen calls to get it running
 call pathogen#runtime_append_all_bundles() 
+call pathogen#helptags()
 
 function RunTest(arg)
 	echo 'Running unit test ...' 
