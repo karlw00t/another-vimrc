@@ -54,6 +54,10 @@ au BufRead,BufNewFile *.py,*.pyw match BadWhitespace /^\t\+/
 " Make trailing whitespace be flagged as bad.
 au BufRead,BufNewFile *.py,*.pyw,*.c,*.h match BadWhitespace /\s\+$/
 
+"Make the editor yell at you if you have a line that is longer than 80 chars
+highlight OverLength ctermbg=red ctermfg=white guibg=#592929
+match OverLength /\%81v.\+/
+
 " Crap, please ignore the rest
 set makeprg=php\ -l\ %
 set errorformat=%m\ in\ %f\ on\ line\ %l
