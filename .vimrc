@@ -58,6 +58,9 @@ au BufRead,BufNewFile *.py,*.pyw,*.c,*.h match BadWhitespace /\s\+$/
 highlight OverLength ctermbg=red ctermfg=white guibg=#592929
 match OverLength /\%81v.\+/
 
+"Visual bell, so the wife doesn't get made
+set vb
+
 " Crap, please ignore the rest
 set makeprg=php\ -l\ %
 set errorformat=%m\ in\ %f\ on\ line\ %l
