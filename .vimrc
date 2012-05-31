@@ -7,6 +7,9 @@ set smartindent
 set autoindent
 set tabstop=4
 set shiftwidth=4
+set expandtab
+
+set ctags=./tags;
 
 " makes searching more greedy
 set ignorecase
