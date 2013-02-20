@@ -86,6 +86,9 @@ inoremap <leader>pr require_once('PHPUnit/root_path.inc.php');
 call pathogen#runtime_append_all_bundles() 
 call pathogen#helptags()
 
+" NerdTree
+ let NERDTreeIgnore = ['\.pyc$','\~$']
+
 function RunTest(arg)
 	echo 'Running unit test ...' 
 	let file = substitute(expand("%:t"), "^.", "\\U\\0", "")
