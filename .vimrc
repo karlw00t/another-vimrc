@@ -9,7 +9,7 @@ set tabstop=4
 set shiftwidth=4
 set expandtab
 
-set ctags=./tags;
+set tags=./tags;
 
 " makes searching more greedy
 set ignorecase
