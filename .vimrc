@@ -64,13 +64,8 @@ match OverLength /\%81v.\+/
 "Visual bell, so the wife doesn't get made
 set vb
 
-" Crap, please ignore the rest
-set makeprg=php\ -l\ %
-set errorformat=%m\ in\ %f\ on\ line\ %l
-
-set nocompatible
-source $VIMRUNTIME/vimrc_example.vim
-source $VIMRUNTIME/mswin.vim
+autocmd Filetype python set makeprg=pylint\ --reports=n\ --output-format=parseable\ %:p
+autocmd Filetype python set errorformat=%f:%l:\ %m
 
 if has("win32")
     behave mswin
@@ -78,29 +73,9 @@ endif
 
 let mapleader = ","
 
-nnoremap <leader>l $a;<Esc>
-
-inoremap <leader>pr require_once('PHPUnit/root_path.inc.php');
-
 " Pathogen calls to get it running
 call pathogen#runtime_append_all_bundles() 
 call pathogen#helptags()
 
 " NerdTree
- let NERDTreeIgnore = ['\.pyc$','\~$']
-
-function RunTest(arg)
-	echo 'Running unit test ...' 
-	let file = substitute(expand("%:t"), "^.", "\\U\\0", "")
-	let file =  expand("%:p:h") . "/test/test" . file
-	if a:arg == '-'
-		let arg = ''
-	endif
-	if filereadable(file)
-		let sp = conque_term#open('phpunit ' .a:arg. ' ' . file , ['split', 'resize 10'])
-	else
-		let sp = conque_term#open('phpunit ' .a:arg. ' ' . expand('%')  , ['split', 'resize 10'])
-	endif
-endfunction
-
-command! -nargs=+ -complete=command Phpunit call RunTest(<q-args>)
+let NERDTreeIgnore = ['\.pyc$','\~$']
