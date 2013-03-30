@@ -74,7 +74,7 @@ endif
 let mapleader = ","
 
 " Pathogen calls to get it running
-call pathogen#runtime_append_all_bundles() 
+call pathogen#incubate()
 call pathogen#helptags()
 
 " NerdTree
