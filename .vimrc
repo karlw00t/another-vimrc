@@ -64,7 +64,7 @@ match OverLength /\%81v.\+/
 "Visual bell, so the wife doesn't get made
 set vb
 
-# use pylint as make program for python
+"use pylint as make program for python
 autocmd Filetype python set makeprg=pylint\ --reports=n\ --output-format=parseable\ %:p
 autocmd Filetype python set errorformat=%f:%l:\ %m
 
