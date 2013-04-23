@@ -33,7 +33,7 @@ nnoremap j gj
 nnoremap k gk
 
 " keep you hands on the home row
-inoremap jj <ESC>
+inoremap jk <ESC>
 
 " conditionally set relative numbers, added in 7.3
 if has("relativenumber")
