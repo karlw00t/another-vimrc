@@ -36,9 +36,7 @@ nnoremap k gk
 inoremap jk <ESC>
 
 " conditionally set relative numbers, added in 7.3
-if has("relativenumber")
-	set relativenumber
-endif
+set relativenumber
 
 " pretty color
 colorscheme darkblue
