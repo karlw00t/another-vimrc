@@ -75,8 +75,7 @@ endif
 let mapleader = ","
 
 " Pathogen calls to get it running
-call pathogen#incubate()
-call pathogen#helptags()
+execute pathogen#infect()
 
 " NerdTree
 let NERDTreeIgnore = ['\.pyc$','\~$']
